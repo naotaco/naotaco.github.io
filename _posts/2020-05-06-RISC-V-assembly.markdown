@@ -18,7 +18,7 @@ categories: Embedded RISC-V
 
 ## toolchainの調達
 
-参考にしたページたちによると、32bitむけツールチェーン（ `riscv32-unknown-elf-xx` ）を使うよう記載がある。しかし[公式](https://www.sifive.com/boards)からダウンロードできるのは64/32bit両サポートとなった64bitっぽい名前のものである。これでもHiFive1 Rev.B向けのコンパイルはできるようなのだが（Freedom E SDKは実際にこれを使って動いていた）、使う前に何らかの設定をしなくてはいけないらしくさっぱりわからない。
+参考にしたページたち（後述）によると、32bitむけツールチェーン（ `riscv32-unknown-elf-xx` ）を使うよう記載がある。しかし[公式](https://www.sifive.com/boards)からダウンロードできるのは64/32bit両サポートとなった64bitっぽい名前のものである。これでもHiFive1 Rev.B向けのコンパイルはできるようなのだが（Freedom E SDKは実際にこれを使って動いていた）、使う前に何らかの設定をしなくてはいけないらしくさっぱりわからない。
 
 単にこのコンパイラに `-march=rv32imac -mabi=ilp32` とするとエラーが出るので、何らか設定の方法があるのだとは思うが面倒なので諦めた。仕方ないので自分でビルドする。
 
@@ -45,12 +45,15 @@ make -j8 #=> riscv32-unknown-elf-as など
 
 ## コード
 
+https://github.com/naotaco/hello-riscv-asm
+
+アセンブリとリンカスクリプトが一つだけ。
 
 
+## 参考
 
-
-
-
+* https://github.com/dwelch67/sifive_samples/tree/master/hifive1b/blinker01
+* http://mickey-happygolucky.hatenablog.com/entry/2019/11/05/165524
 
 
 
