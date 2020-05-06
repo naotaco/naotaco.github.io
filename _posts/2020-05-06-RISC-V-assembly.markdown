@@ -26,14 +26,14 @@ riscv-gnu-toolchain: https://github.com/riscv/riscv-gnu-toolchain
 
 これをcloneしてきて、READMEに書いてある通りにビルドすると動いた。但しコンパイル時に使いたいアーキテクチャを指定する必要がある。またmasterだとうまくコンパイルできなかった。
 
-{% highlight bash %}
+```bash
 sudo apt install autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev
 git clone git@github.com:riscv/riscv-gnu-toolchain.git
 cd riscv-gnu-toolchain
 git checkout v20180629
 ./configure --with-arch=rv32imac --with-abi=ilp32 --prefix=/some/where
 make -j8 #=> riscv32-unknown-elf-as など
-{% endhighlight %}
+```
 
 できたtoolchainのas, ld, objcopy等を使う。
 
